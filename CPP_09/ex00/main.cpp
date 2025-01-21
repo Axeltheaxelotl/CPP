@@ -5,13 +5,13 @@
 
 bool isValidDate(const std::string& date)
 {
-    (void)date; // To avoid unused parameter warning
+    (void)date;
     return true;
 }
 
 bool isValidValue(const std::string& value)
 {
-    (void)value; // To avoid unused parameter warning
+    (void)value;
     return true;
 }
 
