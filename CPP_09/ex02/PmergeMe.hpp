@@ -4,7 +4,7 @@
 #include <vector>
 #include <list>
 #include <iostream>
-#include <chrono>
+#include <ctime>
 
 class PmergeMe
 {
@@ -14,7 +14,7 @@ class PmergeMe
     
     private:
         void mergeInsertSort(std::vector<int>& sequence);
-        void mergeInsertSort(std::list<int>7 sequence);
+        void mergeInsertSort(std::list<int>& sequence);
         template<typename Container>
         void displaySequence(const std::string& message, const Container& sequence);
         template<typename Container>
