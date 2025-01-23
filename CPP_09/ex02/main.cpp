@@ -15,7 +15,7 @@ int main(int argc, char* argv[])
     for (int i = 1; i < argc; ++i)
     {
         int num = std::atoi(argv[i]);
-        if (num <= 0)
+        if (num < 0)
         {
             std::cerr << "Error: Invalid input" << std::endl;
             return 1;

@@ -74,8 +74,8 @@ void PmergeMe::mergeInsertSort(std::list<int>& sequence)
     // Step 3: Insert the smaller elements into the sorted sequence
     it = sequence.begin();
     for (std::list<int>::iterator largerIt = largerElements.begin(); largerIt != largerElements.end(); ++largerIt) {
-        std::list<int>::iterator pos = std::lower_bound(sequence.begin(), sequence.end(), *largerIt);
-        sequence.insert(pos, *largerIt);
+        it = std::lower_bound(it, sequence.end(), *largerIt);
+        sequence.insert(it, *largerIt);
     }
 
     // Step 4: Handle the last element if the size is odd
@@ -83,6 +83,9 @@ void PmergeMe::mergeInsertSort(std::list<int>& sequence)
         std::list<int>::iterator pos = std::lower_bound(sequence.begin(), sequence.end(), sequence.back());
         sequence.insert(pos, sequence.back());
     }
+
+    // Remove the original elements that were replaced
+    sequence.erase(std::unique(sequence.begin(), sequence.end()), sequence.end());
 }
 
 template<typename Container>
