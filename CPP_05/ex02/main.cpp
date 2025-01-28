@@ -50,7 +50,7 @@ int	main()
 
     Marc_Dutroux_copy.incrementGrade();
 
-    std::cout << "BeSigned: Thierry_copy sign Robotomy: ";
+    std::cout << "BeSigned: Émile_Louis_copy sign Robotomy: ";
     try
     {
         robotomy.beSigned(Marc_Dutroux_copy);
