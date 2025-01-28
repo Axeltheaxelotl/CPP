@@ -5,10 +5,10 @@
 
 int	main()
 {
-	Bureaucrat	thiery = Bureaucrat("Thiery", 3);
-	Bureaucrat	thiery_copy = thiery;
-	Bureaucrat	sophie = Bureaucrat("Sophie", 150);
-	Bureaucrat	lou = Bureaucrat("Lou", 20);
+	Bureaucrat	Marc_Dutroux = Bureaucrat("Marc_Dutroux", 3);
+	Bureaucrat	Marc_Dutroux_copy = Marc_Dutroux;
+	Bureaucrat	Émile_Louis = Bureaucrat("Émile_Louis", 150);
+	Bureaucrat	lou = Bureaucrat("Kevin", 20);
 
 	Form		f1 = Form("f1", 75, 1);
 	Form		f2 = Form("f2", 2, 1);
@@ -24,20 +24,20 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "SignForm: Sophie sign F1: ";
+	std::cout << "SignForm: Émile_Louis sign F1: ";
 	try
 	{
-		sophie.signForm(f1);
+		Émile_Louis.signForm(f1);
 	}
 	catch (std::exception &e)
 	{
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "BeSigned: Thiery sign F2: ";
+	std::cout << "BeSigned: Marc_Dutroux sign F2: ";
 	try
 	{
-		f2.beSigned(thiery);
+		f2.beSigned(Marc_Dutroux);
 		std::cout << "OK" << std::endl;
 	}
 	catch (std::exception &e)
@@ -45,12 +45,12 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	thiery_copy.incrementGrade();
+	Marc_Dutroux_copy.incrementGrade();
 
 	std::cout << "BeSigned: Thierry_copy sign F2: ";
 	try
 	{
-		f2.beSigned(thiery_copy);
+		f2.beSigned(Marc_Dutroux_copy);
 		std::cout << "OK" << std::endl;
 	}
 	catch (std::exception &e)
@@ -58,7 +58,7 @@ int	main()
 		std::cout << e.what() << std::endl;
 	}
 
-	std::cout << "SignForm: Lou sign F3: ";
+	std::cout << "SignForm: Kevin sign F3: ";
 	try
 	{
 		lou.signForm(f3);
