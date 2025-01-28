@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:45:11 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/23 13:45:12 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/28 11:19:26 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,22 +17,22 @@ int main()
 {
     try 
     {
-        Bureaucrat bob("Bob", 2);
-        std::cout << bob << std::endl;
-        bob.incrementGrade();
-        std::cout << bob << std::endl;
-        bob.incrementGrade();
+        Bureaucrat fabio("fabio", 2);
+        std::cout << fabio << std::endl;
+        fabio.incrementGrade();
+        std::cout << fabio << std::endl;
+        fabio.incrementGrade();
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
 
     try 
     {
-        Bureaucrat alice("Alice", 149);
-        std::cout << alice << std::endl;
-        alice.decrementGrade();
-        std::cout << alice << std::endl;
-        alice.decrementGrade();
+        Bureaucrat fabio2("fabio2", 149);
+        std::cout << fabio2 << std::endl;
+        fabio2.decrementGrade();
+        std::cout << fabio2 << std::endl;
+        fabio2.decrementGrade();
     } catch (std::exception &e) {
         std::cerr << e.what() << std::endl;
     }
