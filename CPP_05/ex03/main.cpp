@@ -5,13 +5,14 @@
 #include "ShrubberyCreationForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
+#include "Intern.hpp"
 
-int	main()
+int main()
 {
-    Bureaucrat	Marc_Dutroux = Bureaucrat("Marc_Dutroux", 3);
-    Bureaucrat	Marc_Dutroux_copy = Marc_Dutroux;
-    Bureaucrat	Émile_Louis = Bureaucrat("Émile_Louis", 150);
-    Bureaucrat	lou = Bureaucrat("Kevin", 20);
+    Bureaucrat Marc_Dutroux("Marc_Dutroux", 3);
+    Bureaucrat Marc_Dutroux_copy = Marc_Dutroux;
+    Bureaucrat Émile_Louis("Émile_Louis", 150);
+    Bureaucrat lou("Kevin", 20);
 
     ShrubberyCreationForm shrubbery("home");
     RobotomyRequestForm robotomy("Bender");
@@ -50,7 +51,7 @@ int	main()
 
     Marc_Dutroux_copy.incrementGrade();
 
-    std::cout << "BeSigned: Émile_Louis_copy sign Robotomy: ";
+    std::cout << "BeSigned: Marc_Dutroux_copy sign Robotomy: ";
     try
     {
         robotomy.beSigned(Marc_Dutroux_copy);
@@ -99,6 +100,28 @@ int	main()
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
+    }
+
+    // Test Intern
+    Intern someRandomIntern;
+    AForm* rrf;
+    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
+    if (rrf)
+    {
+        Marc_Dutroux.signForm(*rrf);
+        Marc_Dutroux.executeForm(*rrf);
+        delete rrf;
+    }
+
+    // Test ShrubberyCreationForm
+    Intern anotherIntern;
+    AForm* shrubberyForm;
+    shrubberyForm = anotherIntern.makeForm("shrubbery creation", "garden");
+    if (shrubberyForm)
+    {
+        Marc_Dutroux.signForm(*shrubberyForm);
+        Marc_Dutroux.executeForm(*shrubberyForm);
+        delete shrubberyForm;
     }
 
     return 0;
