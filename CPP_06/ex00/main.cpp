@@ -6,9 +6,14 @@
 /*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 20:54:14 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/28 17:40:40 by alanty           ###   ########.fr       */
+/*   Updated: 2025/01/28 18:48:18 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+/*  La conversion des types scalaire consiste a transformer une
+    variable d'un type compatible. Par exemple, convertir un
+    entier (int) en un flottant (float) ou vice-versa. il existe
+    deux types */
 
 #include "ScalarConverter.hpp"
 #include "Conversion.hpp"
