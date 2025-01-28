@@ -1,4 +1,4 @@
-# ifndef CONVERSION_HPP
+#ifndef CONVERSION_HPP
 #define CONVERSION_HPP
 
 #include <string>
@@ -49,6 +49,7 @@ private:
     void fromInt();
     void fromFloat();
     void fromDouble();
+    void fromNanInf(); // Ajout de la déclaration de la méthode fromNanInf
 
     std::string _input;
     int _type;
