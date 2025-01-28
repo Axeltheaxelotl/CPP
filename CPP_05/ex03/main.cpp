@@ -8,10 +8,10 @@
 
 int	main()
 {
-    Bureaucrat	thiery = Bureaucrat("Thiery", 3);
-    Bureaucrat	thiery_copy = thiery;
-    Bureaucrat	sophie = Bureaucrat("Sophie", 150);
-    Bureaucrat	lou = Bureaucrat("Lou", 20);
+    Bureaucrat	Marc_Dutroux = Bureaucrat("Marc_Dutroux", 3);
+    Bureaucrat	Marc_Dutroux_copy = Marc_Dutroux;
+    Bureaucrat	Émile_Louis = Bureaucrat("Émile_Louis", 150);
+    Bureaucrat	lou = Bureaucrat("Kevin", 20);
 
     ShrubberyCreationForm shrubbery("home");
     RobotomyRequestForm robotomy("Bender");
@@ -27,20 +27,20 @@ int	main()
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "SignForm: Sophie sign Shrubbery: ";
+    std::cout << "SignForm: Émile_Louis sign Shrubbery: ";
     try
     {
-        sophie.signForm(shrubbery);
+        Émile_Louis.signForm(shrubbery);
     }
     catch (std::exception &e)
     {
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "BeSigned: Thiery sign Robotomy: ";
+    std::cout << "BeSigned: Marc_Dutroux sign Robotomy: ";
     try
     {
-        robotomy.beSigned(thiery);
+        robotomy.beSigned(Marc_Dutroux);
         std::cout << "OK" << std::endl;
     }
     catch (std::exception &e)
@@ -48,12 +48,12 @@ int	main()
         std::cout << e.what() << std::endl;
     }
 
-    thiery_copy.incrementGrade();
+    Marc_Dutroux_copy.incrementGrade();
 
     std::cout << "BeSigned: Thierry_copy sign Robotomy: ";
     try
     {
-        robotomy.beSigned(thiery_copy);
+        robotomy.beSigned(Marc_Dutroux_copy);
         std::cout << "OK" << std::endl;
     }
     catch (std::exception &e)
@@ -61,7 +61,7 @@ int	main()
         std::cout << e.what() << std::endl;
     }
 
-    std::cout << "SignForm: Lou sign Pardon: ";
+    std::cout << "SignForm: Kevin sign Pardon: ";
     try
     {
         lou.signForm(pardon);
@@ -74,7 +74,7 @@ int	main()
     std::cout << "Execute Shrubbery: ";
     try
     {
-        thiery.executeForm(shrubbery);
+        Marc_Dutroux.executeForm(shrubbery);
     }
     catch (std::exception &e)
     {
@@ -84,7 +84,7 @@ int	main()
     std::cout << "Execute Robotomy: ";
     try
     {
-        thiery.executeForm(robotomy);
+        Marc_Dutroux.executeForm(robotomy);
     }
     catch (std::exception &e)
     {
@@ -94,7 +94,7 @@ int	main()
     std::cout << "Execute Pardon: ";
     try
     {
-        thiery.executeForm(pardon);
+        Marc_Dutroux.executeForm(pardon);
     }
     catch (std::exception &e)
     {
