@@ -6,12 +6,12 @@
 #include "RobotomyRequestForm.hpp"
 #include "PresidentialPardonForm.hpp"
 
-int	main()
+int main()
 {
-    Bureaucrat	Marc_Dutroux = Bureaucrat("Marc_Dutroux", 3);
-    Bureaucrat	Marc_Dutroux_copy = Marc_Dutroux;
-    Bureaucrat	Émile_Louis = Bureaucrat("Émile_Louis", 150);
-    Bureaucrat	lou = Bureaucrat("Kevin", 20);
+    Bureaucrat Marc_Dutroux = Bureaucrat("Marc_Dutroux", 3);
+    Bureaucrat Marc_Dutroux_copy = Marc_Dutroux;
+    Bureaucrat Émile_Louis = Bureaucrat("Émile_Louis", 150);
+    Bureaucrat lou = Bureaucrat("Kevin", 20);
 
     ShrubberyCreationForm shrubbery("home");
     RobotomyRequestForm robotomy("Bender");
@@ -65,6 +65,16 @@ int	main()
     try
     {
         lou.signForm(pardon);
+    }
+    catch (std::exception &e)
+    {
+        std::cout << e.what() << std::endl;
+    }
+
+    std::cout << "SignForm: Marc_Dutroux sign Shrubbery: ";
+    try
+    {
+        Marc_Dutroux.signForm(shrubbery);
     }
     catch (std::exception &e)
     {
