@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alanty <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: alanty <alanty@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/01/23 20:54:17 by alanty            #+#    #+#              #
-#    Updated: 2025/01/23 20:54:18 by alanty           ###   ########.fr        #
+#    Updated: 2025/01/28 17:40:20 by alanty           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp ScalarConverter.cpp
+SRCS = main.cpp ScalarConverter.cpp Conversion.cpp
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
