@@ -3,14 +3,16 @@
 /*                                                        :::      ::::::::   */
 /*   Bureaucrat.cpp                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: alanty <alanty@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/01/23 13:45:05 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/23 13:45:06 by alanty           ###   ########.fr       */
+/*   Updated: 2025/03/11 11:35:11 by alanty           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Bureaucrat.hpp"
+
+Bureaucrat::Bureaucrat() : _name("Unnamed"), _grade(150) {}
 
 Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade(grade)
 {
@@ -21,7 +23,17 @@ Bureaucrat::Bureaucrat(const std::string &name, int grade) : _name(name), _grade
     }
 }
 
+Bureaucrat::Bureaucrat(const Bureaucrat &other) : _name(other._name), _grade(other._grade) {}
+
 Bureaucrat::~Bureaucrat() {}
+
+Bureaucrat &Bureaucrat::operator=(const Bureaucrat &other)
+{
+    if (this != &other) {
+        _grade = other._grade;
+    }
+    return *this;
+}
 
 std::string Bureaucrat::getName() const
 {
