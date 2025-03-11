@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   main.cpp                                           :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 14:53:41 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/28 14:53:43 by alanty           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <string>
 #include "Bureaucrat.hpp"
@@ -21,119 +9,75 @@
 
 int main()
 {
-    Bureaucrat Marc_Dutroux("Marc_Dutroux", 3);
-    Bureaucrat Marc_Dutroux_copy = Marc_Dutroux;
-    Bureaucrat Émile_Louis("Émile_Louis", 150);
-    Bureaucrat lou("Kevin", 20);
-
-    ShrubberyCreationForm shrubbery("home");
-    RobotomyRequestForm robotomy("Bender");
-    PresidentialPardonForm pardon("Ford Prefect");
-
-    std::cout << "Create a form with incorrect grade: ";
     try
     {
-        ShrubberyCreationForm invalidForm("invalid");
+        // Test Bureaucrat
+        Bureaucrat bob("Bob", 1);
+        Bureaucrat alice("Alice", 150);
+        std::cout << bob << std::endl;
+        std::cout << alice << std::endl;
+
+        // Test increment and decrement
+        alice.incrementGrade();
+        std::cout << alice << std::endl;
+        bob.decrementGrade();
+        std::cout << bob << std::endl;
+
+        // Test ShrubberyCreationForm
+        ShrubberyCreationForm shrubbery("home");
+        std::cout << shrubbery << std::endl;
+        bob.signForm(shrubbery);
+        bob.executeForm(shrubbery);
+
+        // Test RobotomyRequestForm
+        RobotomyRequestForm robotomy("Bender");
+        std::cout << robotomy << std::endl;
+        bob.signForm(robotomy);
+        bob.executeForm(robotomy);
+
+        // Test PresidentialPardonForm
+        PresidentialPardonForm pardon("Ford Prefect");
+        std::cout << pardon << std::endl;
+        bob.signForm(pardon);
+        bob.executeForm(pardon);
+
+        // Test Intern
+        Intern someRandomIntern;
+        AForm* form;
+
+        form = someRandomIntern.makeForm("robotomy request", "Bender");
+        if (form)
+        {
+            bob.signForm(*form);
+            bob.executeForm(*form);
+            delete form;
+        }
+
+        form = someRandomIntern.makeForm("shrubbery creation", "home");
+        if (form)
+        {
+            bob.signForm(*form);
+            bob.executeForm(*form);
+            delete form;
+        }
+
+        form = someRandomIntern.makeForm("presidential pardon", "Ford Prefect");
+        if (form)
+        {
+            bob.signForm(*form);
+            bob.executeForm(*form);
+            delete form;
+        }
+
+        form = someRandomIntern.makeForm("unknown form", "target");
+        if (form)
+        {
+            delete form;
+        }
     }
     catch (std::exception &e)
     {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << "SignForm: Émile_Louis sign Shrubbery: ";
-    try
-    {
-        Émile_Louis.signForm(shrubbery);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << "BeSigned: Marc_Dutroux sign Robotomy: ";
-    try
-    {
-        robotomy.beSigned(Marc_Dutroux);
-        std::cout << "OK" << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    Marc_Dutroux_copy.incrementGrade();
-
-    std::cout << "BeSigned: Marc_Dutroux_copy sign Robotomy: ";
-    try
-    {
-        robotomy.beSigned(Marc_Dutroux_copy);
-        std::cout << "OK" << std::endl;
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << "SignForm: Kevin sign Pardon: ";
-    try
-    {
-        lou.signForm(pardon);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << "Execute Shrubbery: ";
-    try
-    {
-        Marc_Dutroux.executeForm(shrubbery);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << "Execute Robotomy: ";
-    try
-    {
-        Marc_Dutroux.executeForm(robotomy);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    std::cout << "Execute Pardon: ";
-    try
-    {
-        Marc_Dutroux.executeForm(pardon);
-    }
-    catch (std::exception &e)
-    {
-        std::cout << e.what() << std::endl;
-    }
-
-    // Test Intern
-    Intern someRandomIntern;
-    AForm* rrf;
-    rrf = someRandomIntern.makeForm("robotomy request", "Bender");
-    if (rrf)
-    {
-        Marc_Dutroux.signForm(*rrf);
-        Marc_Dutroux.executeForm(*rrf);
-        delete rrf;
-    }
-
-    // Test ShrubberyCreationForm
-    Intern anotherIntern;
-    AForm* shrubberyForm;
-    shrubberyForm = anotherIntern.makeForm("shrubbery creation", "garden");
-    if (shrubberyForm)
-    {
-        Marc_Dutroux.signForm(*shrubberyForm);
-        Marc_Dutroux.executeForm(*shrubberyForm);
-        delete shrubberyForm;
+        std::cerr << e.what() << std::endl;
     }
 
     return 0;

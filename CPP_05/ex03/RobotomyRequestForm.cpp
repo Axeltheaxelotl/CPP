@@ -1,15 +1,3 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   RobotomyRequestForm.cpp                            :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 14:54:05 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/28 14:54:09 by alanty           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
 #include <iostream>
 #include <cstdlib>
 #include "RobotomyRequestForm.hpp"
@@ -49,5 +37,5 @@ void RobotomyRequestForm::execute(Bureaucrat const &executor) const
     if (rand() % 2)
         std::cout << this->_target << " has been robotomized successfully." << std::endl;
     else
-        std::cout << "The robotomy failed." << std::endl;
+        std::cout << "Robotomy failed on " << this->_target << "." << std::endl;
 }

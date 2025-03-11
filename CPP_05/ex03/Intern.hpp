@@ -1,34 +1,24 @@
-/* ************************************************************************** */
-/*                                                                            */
-/*                                                        :::      ::::::::   */
-/*   Intern.hpp                                         :+:      :+:    :+:   */
-/*                                                    +:+ +:+         +:+     */
-/*   By: alanty <marvin@42.fr>                      +#+  +:+       +#+        */
-/*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/01/28 14:53:33 by alanty            #+#    #+#             */
-/*   Updated: 2025/01/28 14:53:34 by alanty           ###   ########.fr       */
-/*                                                                            */
-/* ************************************************************************** */
-
-#ifndef INTERN_CLASS_H
-# define INTERN_CLASS_H
+#ifndef INTERN_HPP
+# define INTERN_HPP
 
 # include <iostream>
 # include <string>
+# include <exception>
 # include "AForm.hpp"
-# include "RobotomyRequestForm.hpp"
-# include "PresidentialPardonForm.hpp"
-# include "ShrubberyCreationForm.hpp"
+
+class AForm;
 
 class Intern
 {
     public:
-        Intern(void);
-        Intern(const Intern &src);
-        ~Intern(void);
-        Intern &operator=(const Intern &src);
+        // Constructors
+        Intern();
+        Intern(const Intern &other);
+        Intern &operator=(const Intern &other);
+        ~Intern();
 
-        AForm *makeForm(std::string formName, std::string target);
+        // Member functions
+        AForm *makeForm(const std::string form_name, const std::string form_target);
 };
 
 #endif

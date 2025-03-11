@@ -3,14 +3,14 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: alanty <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: alanty <marvin@42.fr>                      +#+  +:+       +#+        #
 #                                                 +#+#+#+#+#+   +#+            #
-#    Created: 2025/01/28 14:53:46 by alanty            #+#    #+#              #
-#    Updated: 2025/01/28 14:53:50 by alanty           ###   ########.fr        #
+#    Created: 2025/01/23 13:45:25 by alanty            #+#    #+#              #
+#    Updated: 2025/01/23 13:45:27 by alanty           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-SRCS = main.cpp Bureaucrat.cpp AForm.cpp PresidentialPardonForm.cpp RobotomyRequestForm.cpp ShrubberyCreationForm.cpp Intern.cpp
+SRCS = main.cpp Bureaucrat.cpp AForm.cpp ShrubberyCreationForm.cpp RobotomyRequestForm.cpp PresidentialPardonForm.cpp Intern.cpp
 OBJS = $(SRCS:.cpp=.o)
 CXX = c++
 CXXFLAGS = -Wall -Wextra -Werror -std=c++98
