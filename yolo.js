@@ -1,2 +1,2 @@
 console.log('YOLO badge débloqué');
-1
+12
